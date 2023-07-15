@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function CalculatorForm() {
+function CalculatorForm(props) {
 
     const [currentSavings, setCurrentSavings] = useState('');
     const [yearlySavings, setYearlySavings] = useState('');
@@ -9,6 +9,16 @@ function CalculatorForm() {
 
     const CalculatorFormSubmitHandler = (event) => {
         event.preventDefault();
+
+        let userInput = {
+            currentSavings : currentSavings,
+            yearlySavings : yearlySavings,
+            expectedInterest : expectedInterest,
+            duration : duration
+        }
+
+        console.log(userInput);
+
     }
 
     const yearlySavingsHandler = (event) => {
