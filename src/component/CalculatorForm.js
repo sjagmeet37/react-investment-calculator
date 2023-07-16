@@ -17,7 +17,7 @@ function CalculatorForm(props) {
             duration : duration
         }
 
-        console.log(userInput);
+        props.calculateEarnings(userInput);
 
     }
 

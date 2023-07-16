@@ -1,4 +1,15 @@
-function CalculatorTable() {
+function CalculatorTable(props) {
+  const rowData = props.yearlyData;
+
+  const rowJsx = rowData.map((row) => (
+    <tr>
+      <td>{row.year}</td>
+      <td>{row.yearlyInterest}</td>
+      <td>{row.year}</td>
+      <td>{row.savingsEndOfYear}</td>
+      <td>{row.yearlyContribution}</td>
+    </tr>));
+
   return (
     <table className="result">
       <thead>
@@ -11,13 +22,7 @@ function CalculatorTable() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>YEAR NUMBER</td>
-          <td>TOTAL SAVINGS END OF YEAR</td>
-          <td>INTEREST GAINED IN YEAR</td>
-          <td>TOTAL INTEREST GAINED</td>
-          <td>TOTAL INVESTED CAPITAL</td>
-        </tr>
+        {rowJsx}
       </tbody>
     </table>
   );
