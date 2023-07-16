@@ -1,8 +1,11 @@
+
+import styles from "./CalculationTable.module.css"
+
 function CalculatorTable(props) {
   const rowData = props.yearlyData;
 
   const rowJsx = rowData.map((row) => (
-    <tr>
+    <tr id={row.id}>
       <td>{row.year}</td>
       <td>{row.yearlyInterest}</td>
       <td>{row.year}</td>
@@ -11,7 +14,7 @@ function CalculatorTable(props) {
     </tr>));
 
   return (
-    <table className="result">
+    <table className={styles["result"]}>
       <thead>
         <tr>
           <th>Year</th>
