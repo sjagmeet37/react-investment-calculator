@@ -8,6 +8,10 @@ function Calculator () {
 
     const [yearlyData, setYearlyData] = useState([]);
 
+    const onFormReset = () => {
+        setYearlyData([]);
+    };
+
     const calculateHandler = (userInput) => {
        
         
@@ -41,12 +45,11 @@ function Calculator () {
             <h1>Investment Calculator</h1>
           </header>
     
-            <CalculatorForm calculateEarnings={calculateHandler}/>
+            <CalculatorForm calculateEarnings={calculateHandler} onFormReset={onFormReset}/>
     
-          {/* Todo: Show below table conditionally (only once result data is available) */}
-          {/* Show fallback text if no data is available */}
+          {yearlyData.length > 0 ?  <CalculatorTable yearlyData={yearlyData}/> : <h1>Please Fill Investment form for Calculations</h1>}
     
-            <CalculatorTable yearlyData={yearlyData}/>
+           
         </div>
       );    
 

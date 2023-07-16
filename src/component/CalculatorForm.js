@@ -42,6 +42,7 @@ function CalculatorForm(props) {
         setExpectedInterest('');
         setCurrentSavings('');
         setDuration('');
+        props.onFormReset();
     }
 
 
